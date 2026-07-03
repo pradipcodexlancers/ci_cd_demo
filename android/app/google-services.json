@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "829183695259",
+    "project_id": "ci-cd-flutter-61c2d",
+    "storage_bucket": "ci-cd-flutter-61c2d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:829183695259:android:3b0d0a300d11940c6f293e",
+        "android_client_info": {
+          "package_name": "com.example.ci_cd_demo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7HmCjQfQbnJTeGqECkAhwwOAwjF-3Buc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

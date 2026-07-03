@@ -1,0 +1,20 @@
+rules_version = '2';
+
+// Matches the app's Firestore structure:
+//   users/{uid}                 - { name, email }
+//   users/{uid}/notes/{noteId}  - { title, description, createdAt, updatedAt }
+//
+// Every document under a user's own uid is readable/writable only by that
+// signed-in user - no note or profile ever crosses between accounts.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /users/{uid} {
+      allow read, create, update: if request.auth != null && request.auth.uid == uid;
+      allow delete: if false; // Deleting an account is not exposed in the app.
+
+      match /notes/{noteId} {
+        allow read, write: if request.auth != null && request.auth.uid == uid;
+      }
+    }
+  }
+}
