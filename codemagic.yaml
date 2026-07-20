@@ -1,0 +1,25 @@
+workflows:
+  android-ci:
+
+    name: Android CI Pipeline
+
+    max_build_duration: 60
+
+    environment:
+      flutter: stable
+
+    scripts:
+      - name: Get Flutter Packages
+        script: flutter pub get
+
+      - name: Analyze Project
+        script: flutter analyze
+
+      - name: Run Unit Tests
+        script: flutter test
+
+      - name: Build Release APK
+        script: flutter build apk --release
+
+    artifacts:
+      - build/app/outputs/flutter-apk/app-release.apk
